@@ -1,0 +1,10 @@
+FUNCTION Ackermann(m,n) : INTEGER
+BEGIN
+    IF (m=0) THEN
+        RETURN n+1
+    ELSE_IF (n=0) THEN
+        RETURN  Ackermann(m-1,1)
+    ELSE
+        RETURN  Ackermann(m-1,Ackermann(m,n-1))
+    END_IF
+END
