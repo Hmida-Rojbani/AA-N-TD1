@@ -1,0 +1,11 @@
+PROCEDURE reverseTab(tab: ARRAY_OF INTEGER, begin : INTEGER, end: INTEGER)
+VAR
+    aux : INTEGER
+BEGIN
+    IF (begin < end) THEN
+        aux := tab[begin]
+        tab[begin] := tab[end]
+        tab[end] := aux
+        reverseTab(tab,begin+1,end-1)
+    END_IF
+END
