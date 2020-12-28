@@ -1,0 +1,15 @@
+FUNCTION exist(tab: ARRAY_OF INTEGER, e : INTEGER, ind :INTEGER) : INTEGER
+
+BEGIN
+    IF (ind < tab.length) THEN
+        IF (tab[ind] = e) THEN
+            RETURN ind
+        ELSE_IF (tab[ind] < e) THEN
+            RETURN exist(tab,e,ind+1)
+        ELSE
+            RETURN -1
+        END_IF
+    ELSE
+        RETURN -1
+    END_IF
+END
