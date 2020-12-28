@@ -1,6 +1,6 @@
 FUNCTION palind(ch:STRING,start :INTEGER, end: INTEGER) : BOOLEAN
 BEGIN
-    IF (start <= end) THEN
+    IF (start < end) THEN
         IF (ch[start]=ch[end]) THEN
             palind(ch,start+1,end-1)
         ELSE
