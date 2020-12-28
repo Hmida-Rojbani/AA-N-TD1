@@ -1,0 +1,33 @@
+FUNCTION palind(ch:STRING,start :INTEGER, end: INTEGER) : BOOLEAN
+BEGIN
+    IF (start <= end) THEN
+        IF (ch[start]=ch[end]) THEN
+            palind(ch,start+1,end-1)
+        ELSE
+            RETURN FALSE
+        END_IF
+    ELSE
+        RETURN TRUE
+    END_IF
+END
+
+// first call palind(ch,0,ch.length-1)
+
+// version with delete
+FUNCTION palind(ch:STRING) : BOOLEAN
+BEGIN
+    IF (ch.length > 1) THEN
+        IF (ch[0]=ch[ch.length-1]) THEN
+            delete(ch,0)
+            delete(ch,ch.length-1)
+            palind(ch)
+        ELSE
+            RETURN FALSE
+        END_IF
+    ELSE
+        RETURN TRUE
+    END_IF
+END
+
+// let delete(ch:STRING, index : INTEGER):STRING
+// delelte the indicate character in ch
