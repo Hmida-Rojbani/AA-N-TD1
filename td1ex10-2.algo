@@ -1,0 +1,10 @@
+FUNCTION Alterne(T : ARRAY_OF INTEGER, N : INTEGER) : BOOLEAN
+BEGIN
+    IF (N <= 2) THEN
+        RETURN TRUE
+    ELSE_IF ((T[N-1] < T[N] AND T[N-1] < T[N-2]) OR (T[N-1] > T[N] AND T[N-1] > T[N-2])) THEN
+        RETURN Alterne(T, N-1)
+    ELSE
+        RETURN FALSE
+    END_IF
+END

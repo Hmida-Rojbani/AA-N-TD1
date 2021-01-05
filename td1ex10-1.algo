@@ -1,0 +1,11 @@
+FUNCTION Paire(T : ARRAY_OF INTEGER, N : INTEGER) : BOOLEAN
+
+BEGIN
+    IF (N < 1) THEN
+        RETURN TRUE
+    ELSE_IF (T[N] mod 2 <> 0 ) THEN
+        RETURN FALSE
+    ELSE
+        RETURN Paire(T, N-1)
+    END_IF
+END
