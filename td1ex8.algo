@@ -1,0 +1,26 @@
+// Version 1
+FUNCTION ParitéAlterné(T : ARRAY_OF INTEGER, N : INTEGER) : BOOLEAN
+BEGIN
+    IF (N = 0) THEN
+        RETURN TRUE
+    END_IF
+    IF ((T[N] + T[N-1]) mod 2 = 0) THEN
+        RETURN FALSE      
+    END_IF
+
+    RETURN ParitéAlterné(T, N-2)
+END
+
+// version 2
+
+FUNCTION ParitéAlterné(T : ARRAY_OF INTEGER, start : INTEGER, final : INTEGER) : BOOLEAN
+BEGIN
+    IF (start >= final) THEN
+        RETURN TRUE
+    END_IF
+    IF (T[start]  mod 2 = T[final]  mod 2) THEN
+        RETURN FALSE      
+    END_IF
+
+    RETURN ParitéAlterné(T, start + 1, final -1)
+END
