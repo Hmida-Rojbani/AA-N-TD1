@@ -1,0 +1,10 @@
+FUNCTION RDP(T : ARRAY_OF INTEGER[1..Max], N:INTEGER) : INTEGER
+BEGIN
+    IF (n < 1) THEN
+        RETURN 0
+    ELSE_IF (T[N] > 0) THEN
+        RETURN N
+    ELSE
+        RETURN RDP(T, N-1)
+    END_IF
+END
