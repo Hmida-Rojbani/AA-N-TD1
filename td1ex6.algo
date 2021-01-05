@@ -1,0 +1,8 @@
+FUNCTION sum_rec(n :INTEGER) : INTEGER
+BEGIN
+    IF (n < 1) THEN
+        RETURN 0
+    ELSE
+        RETURN n + sum_rec(n-1)
+    END_IF
+END
