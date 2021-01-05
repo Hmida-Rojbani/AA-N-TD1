@@ -1,0 +1,24 @@
+// version 1
+FUNCTION LP(first:Liste) : BOOLEAN
+BEGIN
+    IF (first = NULL) THEN
+        RETURN TRUE
+    ELSE
+        IF (first^.next = NULL) THEN
+            RETURN FALSE
+        ELSE
+            RETURN LP(first^.next^.next)
+        END_IF
+    END_IF
+END
+
+// version 2
+
+FUNCTION LP(first:Liste) : BOOLEAN
+BEGIN
+    IF (first = NULL) THEN
+        RETURN TRUE
+    ELSE
+        RETURN NOT LP(first^.next)
+    END_IF
+END
